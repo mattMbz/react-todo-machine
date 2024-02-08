@@ -57,7 +57,8 @@ function useLocalStorage(initialName, initialValue) {
 
   const saveTotal = (newTotal) => {
     localStorage.setItem("TOTAL", JSON.stringify(newTotal));
-    setTotal(newTotal);
+    const roundedValue =  parseFloat(newTotal.toFixed(2));
+    setTotal(roundedValue);
   };
 
   return [
